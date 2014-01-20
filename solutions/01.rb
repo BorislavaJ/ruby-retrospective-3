@@ -1,9 +1,8 @@
 class Integer
   def prime?
-    if self < 2
-      return false
-    end
-    (2..self-1).all?{ |number| self % number != 0 }
+    return false if self < 2
+      end
+    2.upto(pred).all?{ |number| self % number != 0 }
   end
 
   def prime_factors

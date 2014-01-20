@@ -6,7 +6,9 @@ class Integer
   end
 
   def prime_factors
-    2.upto(self).select{ |number| number.prime? and self % number == 0 }
+    return [] if abs < 2
+    divisor = 2.upto(abs).find{ |number| number.prime? and abs % number == 0 }
+    [divisor] + (abs / divisor).prime_factors 
   end
 
   def find_harmonic_number

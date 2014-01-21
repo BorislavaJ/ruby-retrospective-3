@@ -22,7 +22,7 @@ class Integer
   end
 
   def digits
-    to_s.scan(/./).map { |number| number.to_i }
+    abs.to_s.scan(/./).map { |number| number.to_i }
   end
 end
 

@@ -48,11 +48,9 @@ class Array
     find_all{ |number| (index+=1) % n != 0 }
   end
 
-  def combine_with(other)
-    if length > other.length
-      zip(other).flatten.compact
-    else
-      other.zip(self).flatten.compact
-    end
+ def combine_with(other)
+    return other if self == []
+    return self if other == []
+    [self[0]] + other.combine_with(self.drop(1))
   end
 end

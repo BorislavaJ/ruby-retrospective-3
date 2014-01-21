@@ -44,7 +44,8 @@ class Array
   end
 
   def drop_every(n)
-    find_all{ |i| i % n != 0 }
+    index = 0
+    find_all{ |number| (index+=1) % n != 0 }
   end
 
   def combine_with(other)

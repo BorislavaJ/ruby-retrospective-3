@@ -28,15 +28,7 @@ end
 
 class Array
   def frequencies
-    hash = {}
-    self.each do |number|
-      if hash.has_key?(number)
-        hash[ number ] += 1
-      else
-        hash[ number ] = 1
-      end
-    end
-    hash
+    Hash[each.map { |element| [element, count(element)] }]
   end
 
   def average

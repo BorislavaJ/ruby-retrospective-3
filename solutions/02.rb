@@ -52,7 +52,7 @@ class TodoList
   end
 
   def completed?
-    @collection.all? { |task| task.status == :completed }
+    @collection.all? { |task| task.status == :completed }.count
   end
 end
 

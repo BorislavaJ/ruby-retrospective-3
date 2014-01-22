@@ -1,7 +1,6 @@
 class Integer
   def prime?
     return false if self < 2
-      end
     2.upto(pred).all?{ |number| self % number != 0 }
   end
 
